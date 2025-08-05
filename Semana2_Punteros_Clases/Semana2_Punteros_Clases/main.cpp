@@ -14,7 +14,7 @@ class Hormiga {
 		string nombre;
 
 	public:
-		Hormiga(string nombre):nombre(nombre), id(idCont + 1) {
+		Hormiga(string nombre):nombre(nombre), id(++idCont) {
 			cout << "Hormiga: " << endl;
 			cout << this->toString();
 			cout << "Ha sido creada :)" << endl << endl;
@@ -65,10 +65,28 @@ int main() {
 	Hormiga* hormigaDeNarnia = narnia();
 
 	// que pasara si intento invocar el toString de la hormiga de narnia?
-	// probablemente funcione
+	// probablemente funcione, pero no como se espera
 
 	cout << endl << "-------------------------------------------------" << endl;
 	cout << "hormiga de narnia desde el main" << endl;
 	cout << hormigaDeNarnia->toString();
+
+	//-----------------------------------------------------------------------
+	cout << endl << endl << endl;
+	cout << endl << "-------------------------------------------------" << endl;
+	cout << endl << "-------------------------------------------------" << endl;
+
+	cout << "yendo a hogwarts por una hormiga" << endl << endl;
+	Hormiga* hormigaDeHogwarts = hogwarts();
+
+	// que pasara si intento invocar el toString de la hormiga de hogwarts?
+	// es 100% seguro que funcione
+
+	cout << endl << "-------------------------------------------------" << endl;
+	cout << "hormiga de hogwarts desde el main" << endl;
+	cout << hormigaDeHogwarts->toString();
+
+
+
 	return 0;
 }
