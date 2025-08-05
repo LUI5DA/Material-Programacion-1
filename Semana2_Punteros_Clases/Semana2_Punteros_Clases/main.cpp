@@ -60,6 +60,9 @@ Hormiga* hogwarts() {
 }
 
 
+
+
+
 int main() {
 	cout << "yendo a narnia por una hormiga" << endl << endl;
 	Hormiga* hormigaDeNarnia = narnia();
@@ -87,6 +90,14 @@ int main() {
 	cout << hormigaDeHogwarts->toString();
 
 
+	// ----------------------------------------------------------------
+	// ejercicios
+
+	// #1 cual es la direccion de memoria de cada una de las hormigas
+
+	// #2 cual es la direccion de memoria de los punteros a las hormigas
+
+	// #3 como podemos hacer que la hormiga de narnia tambien pueda "viajar" al main
 
 	return 0;
 }
