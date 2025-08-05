@@ -1,7 +1,7 @@
 #include <iostream>
 #include <sstream>
 
-using namespace std;
+using namespace std; //para no tener que hacer std:: a todo a lo que pertenece a std
 int idCont = 0;
 
 
@@ -41,10 +41,10 @@ class Hormiga {
 // sin embargo la hormiga solo puede vivir dentro de la funcion
 // porque es un objeto automatico (vive en el stack es decir dentro de la funcion)
 Hormiga* narnia() {
-	Hormiga hormigaDeNarnia = Hormiga("Tummus");
+	Hormiga* hormigaDeNarnia = new Hormiga("Tummus");
 
 	cout << "saliendo de narnia" << endl;
-	return &hormigaDeNarnia;
+	return hormigaDeNarnia;
 }
 
 
@@ -88,16 +88,25 @@ int main() {
 	cout << endl << "-------------------------------------------------" << endl;
 	cout << "hormiga de hogwarts desde el main" << endl;
 	cout << hormigaDeHogwarts->toString();
-
+	
 
 	// ----------------------------------------------------------------
 	// ejercicios
 
 	// #1 cual es la direccion de memoria de cada una de las hormigas
+	cout << "Hormiga narnia: " << hormigaDeNarnia<<endl;
+	cout << "Hormiga hogwarts: " << hormigaDeHogwarts<<endl;
+
 
 	// #2 cual es la direccion de memoria de los punteros a las hormigas
+	cout << "Puntero a hormiga narnia: " << &hormigaDeNarnia << endl;
+	cout << "Puntero a hormiga hogwarts: " << &hormigaDeHogwarts << endl;
 
 	// #3 como podemos hacer que la hormiga de narnia tambien pueda "viajar" al main
+	
+	//poniendole new a la funcion narnia
 
+	delete hormigaDeHogwarts;
+	delete hormigaDeNarnia;
 	return 0;
 }
