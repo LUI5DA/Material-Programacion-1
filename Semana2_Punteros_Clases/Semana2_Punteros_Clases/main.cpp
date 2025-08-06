@@ -1,39 +1,11 @@
-#include <iostream>
-#include <sstream>
+#include "Hormiguero.h"
 
 using namespace std; //para no tener que hacer std:: a todo a lo que pertenece a std
-int idCont = 0;
 
 
 // demostracion de memoria dinamica y memoria automatica
 
 
-class Hormiga {
-	private:
-		int id;
-		string nombre;
-
-	public:
-		Hormiga(string nombre):nombre(nombre), id(++idCont) {
-			cout << "Hormiga: " << endl;
-			cout << this->toString();
-			cout << "Ha sido creada :)" << endl << endl;
-		}
-
-		virtual ~Hormiga() {
-			cout << "Hormiga: " << endl;
-			cout << this->toString();
-			cout << "Ha muerto :(" << endl << endl ;
-		}
-
-		string toString() {
-			stringstream s;
-			s << "ID: " << id << endl;
-			s << "nombre: " << nombre << endl;
-
-			return s.str();
-		}
-};
 
 
 // funcion para simular que nos traemos una hormiga de un lugar
@@ -106,7 +78,15 @@ int main() {
 	
 	//poniendole new a la funcion narnia
 
-	delete hormigaDeHogwarts;
-	delete hormigaDeNarnia;
+
+	cout << "ejemplo vectores" << endl;
+	Hormiga* v[5];
+	Hormiga** ptr = v;
+
+	cout << (*ptr + 1)->toString() << endl;
+	cout << v[1]->toString() << endl;
+
+	//delete hormigaDeHogwarts;
+	//delete hormigaDeNarnia;
 	return 0;
 }
