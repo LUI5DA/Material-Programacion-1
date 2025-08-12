@@ -44,11 +44,52 @@ class ContenedorLibros1
 // =========================================================================
 // #2 Vector automatico de punteros
 
+class ContenedorLibros2 {
+private:
+	Libro* vec[TAMANO];
+	int can;
+	int tam;
 
+public:
+	ContenedorLibros2();
+
+	~ContenedorLibros2();
+
+	bool insert(Libro&);
+
+	int search(int);
+
+	Libro* getAt(int);
+
+	bool deleteL(int);
+
+	string toString();
+};
 
 
 // =========================================================================
 // #3 Vector dinamico de objetos
+class ContenedorLibros3 {
+private:
+	Libro* vec;
+	int can;
+	int tam;
+
+public:
+	ContenedorLibros3();
+
+	~ContenedorLibros3();
+
+	bool insert(Libro&);
+
+	int search(int);
+
+	Libro* getAt(int);
+
+	bool deleteL(int);
+
+	string toString();
+};
 
 
 
@@ -56,4 +97,25 @@ class ContenedorLibros1
 // =========================================================================
 // #4 Vector dinamico de punteros
 
+class ContenedorLibros4 {
+private:
+	Libro** vec;
+	int can;
+	int tam;
+
+public:
+	ContenedorLibros4();
+
+	~ContenedorLibros4();
+
+	bool insert(Libro&);
+
+	int search(int);
+
+	Libro* getAt(int);
+
+	bool deleteL(int);
+
+	string toString();
+};
 
