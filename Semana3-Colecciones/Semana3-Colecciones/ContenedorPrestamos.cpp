@@ -29,10 +29,10 @@ ContenedorPrestamosDyn::~ContenedorPrestamosDyn()
 }
 
 
-bool ContenedorPrestamosDyn::insert(const Prestamo& p)
+bool ContenedorPrestamosDyn::insert(Prestamo& p)
 {
     if (can >= tam) resize(tam * 2);
-    vec[can++] = new Prestamo(p); // copia del Prestamo (sus punteros se comparten)
+    vec[can++] = &p; 
     return true;
 }
 
@@ -43,7 +43,7 @@ bool ContenedorPrestamosDyn::insert(Estudiante* est, Libro* lib, bool devuelto)
     return true;
 }
 
-int ContenedorPrestamosDyn::search(const string& cedula, int isbn) const
+int ContenedorPrestamosDyn::search(string& cedula, int isbn)
 {
     for (int i = 0; i < can; ++i) {
         if (!vec[i]) continue;
@@ -56,13 +56,13 @@ int ContenedorPrestamosDyn::search(const string& cedula, int isbn) const
     return -1;
 }
 
-Prestamo ContenedorPrestamosDyn::getAt(int i) const
+Prestamo* ContenedorPrestamosDyn::getAt(int i)
 {
-    if (i >= 0 && i < can && vec[i] != nullptr) return *vec[i]; // devuelve copia
-    return Prestamo();
+    if (i >= 0 && i < can && vec[i] != nullptr) return vec[i]; // devuelve copia
+    return nullptr;
 }
 
-bool ContenedorPrestamosDyn::deleteP(const string& cedula, int isbn)
+bool ContenedorPrestamosDyn::deleteP(string& cedula, int isbn)
 {
     int index = search(cedula, isbn);
     if (index == -1) return false;
@@ -74,7 +74,7 @@ bool ContenedorPrestamosDyn::deleteP(const string& cedula, int isbn)
     return true;
 }
 
-string ContenedorPrestamosDyn::toString() const
+string ContenedorPrestamosDyn::toString()
 {
     ostringstream s;
     for (int i = 0; i < can; ++i) {
