@@ -166,8 +166,6 @@ La clase orquesta todo usando:
 
 \#include <iostream>
 
-\#include <limits>
-
 \#include "Biblioteca.h"
 
 using namespace std;
@@ -218,10 +216,6 @@ int menu() {
 
 int main() {
 
-&nbsp;   ios::sync\_with\_stdio(false);
-
-&nbsp;   cin.tie(nullptr);
-
 
 
 &nbsp;   Biblioteca biblio;
@@ -229,139 +223,7 @@ int main() {
 
 
 &nbsp;   while (true) {
-
-&nbsp;       int op = menu();
-
-&nbsp;       if (op == 0) break;
-
-
-
-&nbsp;       if (op == 1) {
-
-&nbsp;           string ced, tel, mail, nom;
-
-&nbsp;           cout << "Cedula: "; cin >> ced;
-
-&nbsp;           cout << "Telefono: "; cin >> tel;
-
-&nbsp;           cout << "Email: "; cin >> mail;
-
-&nbsp;           cout << "Nombre: "; cin.ignore(); getline(cin, nom);
-
-&nbsp;           Estudiante e(ced, tel, mail, nom);
-
-&nbsp;           cout << (biblio.registrarEstudiante(e) ? "OK\\n" : "Error: ya existe\\n");
-
-&nbsp;       }
-
-&nbsp;       else if (op == 2) {
-
-&nbsp;           int isbn; double precio; string nom, autor;
-
-&nbsp;           cout << "ISBN: "; cin >> isbn;
-
-&nbsp;           cout << "Precio: "; cin >> precio;
-
-&nbsp;           cout << "Titulo: "; cin.ignore(); getline(cin, nom);
-
-&nbsp;           cout << "Autor: "; getline(cin, autor);
-
-&nbsp;           Libro l; l.setISBN(isbn); l.setPrecio(precio); l.setNombre(nom); l.setAutor(autor);
-
-&nbsp;           cout << (biblio.agregarLibro(l) ? "OK\\n" : "Error: ISBN duplicado\\n");
-
-&nbsp;       }
-
-&nbsp;       else if (op == 3) {
-
-&nbsp;           string ced; cout << "Cedula: "; cin >> ced;
-
-&nbsp;           cout << (biblio.eliminarEstudiante(ced) ? "Eliminado\\n" : "No se puede eliminar (no existe o tiene prestamos activos)\\n");
-
-&nbsp;       }
-
-&nbsp;       else if (op == 4) {
-
-&nbsp;           int isbn; cout << "ISBN: "; cin >> isbn;
-
-&nbsp;           cout << (biblio.eliminarLibro(isbn) ? "Eliminado\\n" : "No se puede eliminar (no existe o esta prestado)\\n");
-
-&nbsp;       }
-
-&nbsp;       else if (op == 5) {
-
-&nbsp;           string ced; int isbn;
-
-&nbsp;           cout << "Cedula estudiante: "; cin >> ced;
-
-&nbsp;           cout << "ISBN libro: "; cin >> isbn;
-
-&nbsp;           cout << (biblio.prestarLibro(ced, isbn) ? "Prestamo registrado\\n" : "Error: datos invalidos o libro ya prestado\\n");
-
-&nbsp;       }
-
-&nbsp;       else if (op == 6) {
-
-&nbsp;           string ced; int isbn;
-
-&nbsp;           cout << "Cedula estudiante: "; cin >> ced;
-
-&nbsp;           cout << "ISBN libro: "; cin >> isbn;
-
-&nbsp;           cout << (biblio.devolverLibro(ced, isbn) ? "Devuelto\\n" : "Error: prestamo no encontrado o ya devuelto\\n");
-
-&nbsp;       }
-
-&nbsp;       else if (op == 7) {
-
-&nbsp;           cout << biblio.listarEstudiantes();
-
-&nbsp;       }
-
-&nbsp;       else if (op == 8) {
-
-&nbsp;           cout << biblio.listarLibros();
-
-&nbsp;       }
-
-&nbsp;       else if (op == 9) {
-
-&nbsp;           cout << biblio.listarPrestamos();
-
-&nbsp;       }
-
-&nbsp;       else if (op == 10) {
-
-&nbsp;           cout << biblio.listarPrestamosActivos();
-
-&nbsp;       }
-
-&nbsp;       else if (op == 11) {
-
-&nbsp;           string ced; cout << "Cedula: "; cin >> ced;
-
-&nbsp;           auto p = biblio.buscarEstudiantePtr(ced);
-
-&nbsp;           cout << (p ? p->toString() : string("No encontrado")) << "\\n";
-
-&nbsp;       }
-
-&nbsp;       else if (op == 12) {
-
-&nbsp;           int isbn; cout << "ISBN: "; cin >> isbn;
-
-&nbsp;           auto p = biblio.buscarLibroPtr(isbn);
-
-&nbsp;           cout << (p ? p->toString() : string("No encontrado")) << "\\n";
-
-&nbsp;       }
-
-&nbsp;       else {
-
-&nbsp;           cout << "Opcion invalida\\n";
-
-&nbsp;       }
-
+  // implementar un switch y funciones
 &nbsp;   }
 
 &nbsp;   cout << "Hasta luego!\\n";
