@@ -9,7 +9,7 @@ class Biblioteca
 {
 private:
     ContenedorEstudiantesDyn* estudiantes;
-    ContenedorLibros2*      libros;
+    ContenedorLibros4*      libros;
     ContenedorPrestamosDyn*   prestamos;
 
     // Helpers
@@ -19,6 +19,8 @@ private:
 
 public:
     Biblioteca();
+
+    ~Biblioteca();
 
     // Gestión de estudiantes
     bool registrarEstudiante(Estudiante& e);

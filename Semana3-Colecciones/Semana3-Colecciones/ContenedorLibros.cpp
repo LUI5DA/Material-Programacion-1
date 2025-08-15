@@ -72,6 +72,10 @@ string ContenedorLibros1::toString()
 	return s.str();
 }
 
+
+
+// ---------------------------------------------------------------------------
+// tipo 2
 ContenedorLibros2::ContenedorLibros2()
 {
 	can = 0;
@@ -155,6 +159,12 @@ string ContenedorLibros2::toString()
 	return s.str();
 }
 
+
+
+
+
+// ---------------------------------------------------------------------------
+// tipo 3
 ContenedorLibros3::ContenedorLibros3()
 {
 	can = 0;
@@ -168,30 +178,70 @@ ContenedorLibros3::~ContenedorLibros3()
 	delete[] vec;
 }
 
-bool ContenedorLibros3::insert(Libro&)
+bool ContenedorLibros3::insert(Libro& l)
 {
+	if (can < tam) {
+		vec[can++] = l;
+		return true;
+	}
 	return false;
 }
 
-int ContenedorLibros3::search(int)
+int ContenedorLibros3::search(int isbn)
 {
-	return 0;
+	for (int i = 0; i < can; i++) {
+		if (vec[i].getISBN() == isbn) {
+			return i;
+		}
+	}
+
+	return -1;
 }
 
-Libro* ContenedorLibros3::getAt(int)
+Libro* ContenedorLibros3::getAt(int i)
 {
+	if (i >= 0 && i < can) {
+		return &vec[i];
+	}
+
 	return nullptr;
 }
 
-bool ContenedorLibros3::deleteL(int)
+bool ContenedorLibros3::deleteL(int isbn)
 {
-	return false;
+	int index = search(isbn);
+
+	if (index == -1) {
+		return false;
+	}
+
+	for (int i = index; i < can; i++) {
+		vec[i] = vec[i + 1];
+	}
+
+	--can;
+
+	return true;
 }
 
 string ContenedorLibros3::toString()
 {
-	return string();
+	stringstream s;
+
+	for (int i = 0; i < can; i++) {
+		s << vec[i].toString() << endl;
+	}
+
+	s << endl;
+
+	return s.str();
 }
+
+
+
+
+// ---------------------------------------------------------------------------
+// tipo 4
 
 ContenedorLibros4::ContenedorLibros4()
 {
@@ -212,27 +262,61 @@ ContenedorLibros4::~ContenedorLibros4()
 	delete[]vec;
 }
 
-bool ContenedorLibros4::insert(Libro&)
+bool ContenedorLibros4::insert(Libro& l)
 {
+	if (can < tam) {
+		vec[can++] = &l;
+		return true;
+	}
 	return false;
 }
 
-int ContenedorLibros4::search(int)
+int ContenedorLibros4::search(int isbn)
 {
-	return 0;
+	for (int i = 0; i < can; i++) {
+		if (vec[i]->getISBN() == isbn) {
+			return i;
+		}
+	}
+
+	return -1;
 }
 
-Libro* ContenedorLibros4::getAt(int)
+Libro* ContenedorLibros4::getAt(int i)
 {
+	if (i >= 0 && i < can) {
+		return vec[i];
+	}
+
 	return nullptr;
 }
 
-bool ContenedorLibros4::deleteL(int)
+bool ContenedorLibros4::deleteL(int isbn)
 {
-	return false;
+	int index = search(isbn);
+
+	if (index == -1) {
+		return false;
+	}
+
+	for (int i = index; i < can; i++) {
+		vec[i] = vec[i + 1];
+	}
+
+	--can;
+
+	return true;
 }
 
 string ContenedorLibros4::toString()
 {
-	return string();
+	stringstream s;
+
+	for (int i = 0; i < can; i++) {
+		s << vec[i]->toString() << endl << endl;
+	}
+
+	s << endl;
+
+	return s.str();
 }

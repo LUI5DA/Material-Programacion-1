@@ -29,14 +29,14 @@ public:
     void setNombre(const string& nombre);
 
     // Getters
-    string getCedula() const;
+    string getCedula() ;
 
-    string getTelefono() const;
+    string getTelefono() ;
 
-    string getEmail() const;
+    string getEmail() ;
 
-    string getNombre() const;
+    string getNombre() ;
 
     // Funciones útiles
-    string toString() const;
+    string toString() ;
 };

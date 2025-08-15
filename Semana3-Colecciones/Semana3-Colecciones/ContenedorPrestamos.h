@@ -35,4 +35,11 @@ public:
     int size() { return can; }
 
     int capacity() { return tam; }
+
+
+    bool prestado(int);
+
+    bool prestamosActivos(string);
+
+    string listarActivos();
 };

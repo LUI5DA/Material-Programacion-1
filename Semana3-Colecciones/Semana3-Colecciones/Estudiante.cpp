@@ -17,16 +17,16 @@ void Estudiante::setEmail(const string& email) { this->email = email; }
 void Estudiante::setNombre(const string& nombre) { this->nombre = nombre; }
 
 // Getters
-string Estudiante::getCedula() const { return cedula; }
+string Estudiante::getCedula() { return cedula; }
 
-string Estudiante::getTelefono() const { return telefono; }
+string Estudiante::getTelefono() { return telefono; }
 
-string Estudiante::getEmail() const { return email; }
+string Estudiante::getEmail() { return email; }
 
-string Estudiante::getNombre() const { return nombre; }
+string Estudiante::getNombre() { return nombre; }
 
 // Funciones útiles
-string Estudiante::toString() const {
+string Estudiante::toString() {
     ostringstream oss;
     oss << "Cedula: " << cedula
         << "\nNombre: " << nombre
