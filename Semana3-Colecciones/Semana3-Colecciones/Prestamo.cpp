@@ -4,10 +4,14 @@ using namespace std;
 
 // Constructores
 Prestamo::Prestamo()
-    : estudiante(nullptr), libro(nullptr), devuelto(false) {}
+    : estudiante(nullptr), libro(nullptr), devuelto(false) {
+}
 
 Prestamo::Prestamo(Estudiante* est, Libro* lib, bool devuelto)
-    : estudiante(est), libro(lib), devuelto(devuelto) {}
+    : estudiante(est), libro(lib), devuelto(devuelto) 
+{
+    libro->prestar();
+}
 
 // Setters
 void Prestamo::setEstudiante(Estudiante* est) { this->estudiante = est; }
@@ -24,7 +28,10 @@ Libro* Prestamo::getLibro() const { return libro; }
 bool Prestamo::estaDevuelto() const { return devuelto; }
 
 // Operaciones
-void Prestamo::marcarDevuelto() { devuelto = true; }
+void Prestamo::marcarDevuelto() {
+    devuelto = true;
+    libro->devolver();
+}
 
 // Utilidad
 string Prestamo::toString() const {

@@ -81,7 +81,7 @@ string ContenedorEstudiantesDyn::toString()
 {
     ostringstream s;
     for (int i = 0; i < can; ++i) {
-        if (vec[i]) s << vec[i]->toString() << endl;
+        if (vec[i]) s << vec[i]->toString() << endl << endl;
     }
     s << endl;
     return s.str();

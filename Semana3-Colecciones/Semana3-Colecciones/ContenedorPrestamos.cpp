@@ -78,7 +78,41 @@ string ContenedorPrestamosDyn::toString()
 {
     ostringstream s;
     for (int i = 0; i < can; ++i) {
-        if (vec[i]) s << vec[i]->toString() << endl;
+        if (vec[i]) s << vec[i]->toString() << endl << endl;
+    }
+    s << endl;
+    return s.str();
+}
+
+bool ContenedorPrestamosDyn::prestado(int isbn)
+{
+    for (int i = 0; i < can; i++) {
+        if (vec[i]->getLibro()->getISBN() == isbn && !vec[i]->estaDevuelto()) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool ContenedorPrestamosDyn::prestamosActivos(string cedula)
+{
+    for (int i = 0; i < can; i++) {
+        if (vec[i]->getEstudiante()->getCedula() == cedula && !vec[i]->estaDevuelto()) {
+            return true;
+        }
+    }
+    return false;
+}
+
+string ContenedorPrestamosDyn::listarActivos()
+{
+    ostringstream s;
+    for (int i = 0; i < can; ++i) {
+        if (vec[i]) {
+            if (!vec[i]->estaDevuelto()) {
+                s << vec[i]->toString() << endl;
+            }
+        }
     }
     s << endl;
     return s.str();

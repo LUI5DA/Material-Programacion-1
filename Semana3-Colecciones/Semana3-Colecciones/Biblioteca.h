@@ -9,33 +9,44 @@ class Biblioteca
 {
 private:
     ContenedorEstudiantesDyn* estudiantes;
-    ContenedorLibros1*      libros;
+    ContenedorLibros4*      libros;
     ContenedorPrestamosDyn*   prestamos;
 
     // Helpers
-    bool hayPrestamoActivoDeISBN(int isbn) const;
-    bool tienePrestamosActivosEstudiante(const string& cedula) const;
+    bool hayPrestamoActivoDeISBN(int isbn);
+
+    bool tienePrestamosActivosEstudiante(string& cedula);
 
 public:
     Biblioteca();
 
+    ~Biblioteca();
+
     // Gestión de estudiantes
-    bool registrarEstudiante(const Estudiante& e);
-    bool eliminarEstudiante(const string& cedula); // solo si no tiene préstamos activos
-    Estudiante* buscarEstudiantePtr(const string& cedula) const;
-    string listarEstudiantes() const;
+    bool registrarEstudiante(Estudiante& e);
+
+    bool eliminarEstudiante(string& cedula); // solo si no tiene préstamos activos
+
+    Estudiante* buscarEstudiantePtr(string& cedula);
+
+    string listarEstudiantes();
 
     // Gestión de libros
-    bool agregarLibro(const Libro& l);
+    bool agregarLibro(Libro& l);
+
     bool eliminarLibro(int isbn); // solo si no está prestado
-    Libro* buscarLibroPtr(int isbn) const;
-    string listarLibros() const;
+
+    Libro* buscarLibroPtr(int isbn);
+
+    string listarLibros();
 
     // Préstamos
-    bool prestarLibro(const string& cedula, int isbn);
-    bool devolverLibro(const string& cedula, int isbn);
+    bool prestarLibro(string& cedula, int isbn);
+
+    bool devolverLibro(string& cedula, int isbn);
 
     // Reportes
-    string listarPrestamos() const;
-    string listarPrestamosActivos() const;
+    string listarPrestamos();
+
+    string listarPrestamosActivos();
 };
