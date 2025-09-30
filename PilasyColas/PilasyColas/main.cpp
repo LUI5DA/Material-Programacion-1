@@ -74,9 +74,22 @@ int main() {
 		puntos++;
 	}
 	else {
-		cout << "Metodo head incorrecto... No pasa la prueba 3" << endl;
+		cout << "Metodo head incorrecto... No pasa la prueba 4" << endl;
+	}
+	// sacar todos los elementos.
+	cola->dequeue();
+	cola->dequeue();
+	cola->dequeue();
+	cola->dequeue();
+
+	if (cola->isEmpty()) {
+		cout << "Metodo head correcto... Pasa la prueba 5" << endl;
+		puntos++;
+	}
+	else {
+		cout << "Metodo head incorrecto... No pasa la prueba 5" << endl;
 	}
 	
-
+	cout << "Puntos obtenidos: " << puntos << "/5" << endl;
 	return 0;
 }

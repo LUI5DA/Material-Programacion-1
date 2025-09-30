@@ -11,4 +11,6 @@ class Paquete {
 public:
 	Paquete(int i, string direc, string ced);
 	string toString();
+
+	int getId();
 };

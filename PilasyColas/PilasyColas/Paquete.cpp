@@ -17,3 +17,8 @@ string Paquete::toString()
 
     return s.str();
 }
+
+int Paquete::getId()
+{
+    return id;
+}
