@@ -27,6 +27,21 @@
     <ClInclude Include="Cola.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Coleccion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Asiento.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cliente.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Nodo.cpp">
@@ -42,6 +57,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Cola.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Coleccion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Asiento.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cliente.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

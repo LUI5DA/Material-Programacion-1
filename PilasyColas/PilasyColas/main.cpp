@@ -8,10 +8,24 @@ using namespace std;
 // 2*(1+(x-2)/5) -> true, para cada "(" hay un ")" 
 // 2*(1+(x-2/5) -> false, sobra un (
 bool isBalanced(string s) {
-	// funcion a implementar
-	return false;
+	Pila* pila = new Pila();
+	for (int i = 0; i < s.length(); i++) {
+		if (s[i] == '(') {
+			pila->push(s[i]);
+		}
+		if (s[i] == ')') {
+			if (pila->isEmpty()) {
+				return false;
+			}
+			else {
+				pila->pop();
+			}
+		}
+	}
+	return pila->isEmpty();
 }
 
+// (x+1/3*2**3))
 
 int main() {
 	int puntos = 0;
@@ -69,6 +83,8 @@ int main() {
 	}
 
 	pprueba1 = cola->dequeue();
+	pprueba1 = cola->dequeue();
+	cout << "Prueba 4: " <<pprueba1->getId() <<endl;
 	if (pprueba1->getId() == 2) {
 		cout << "Metodo dequeue correcto... Pasa la prueba 4" << endl;
 		puntos++;
@@ -77,7 +93,6 @@ int main() {
 		cout << "Metodo head incorrecto... No pasa la prueba 4" << endl;
 	}
 	// sacar todos los elementos.
-	cola->dequeue();
 	cola->dequeue();
 	cola->dequeue();
 	cola->dequeue();

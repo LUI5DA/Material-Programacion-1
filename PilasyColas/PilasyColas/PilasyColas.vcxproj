@@ -123,14 +123,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Asiento.h" />
+    <ClInclude Include="Base.h" />
+    <ClInclude Include="Cliente.h" />
     <ClInclude Include="Cola.h" />
+    <ClInclude Include="Coleccion.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="Nodo.h" />
     <ClInclude Include="Paquete.h" />
     <ClInclude Include="Pila.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Asiento.cpp" />
+    <ClCompile Include="Base.cpp" />
+    <ClCompile Include="Cliente.cpp" />
     <ClCompile Include="Cola.cpp" />
+    <ClCompile Include="Coleccion.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Nodo.cpp" />
     <ClCompile Include="Paquete.cpp" />
     <ClCompile Include="Pila.cpp" />
