@@ -59,6 +59,12 @@ void Controller::procesarOpcion(int opcion) {
             mundo->guardarDatos();
             interfaz.mostrarMensaje("💾 Datos guardados correctamente.");
             break;
+        case 8: {
+            Fecha* f = interfaz.leerFecha();
+            interfaz.mostrarTexto(mundo->mostrarProductosVencidos(f));
+            delete f;
+            break;
+        }
         case 0:
             interfaz.mostrarMensaje("👋 Saliendo del programa...");
             ejecutando = false;

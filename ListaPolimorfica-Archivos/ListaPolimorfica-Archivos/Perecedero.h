@@ -16,6 +16,6 @@ public:
     virtual string toString();
 
     virtual void write(ofstream&) = 0;
-
+    bool estaVencido(Fecha* f);
 };
 

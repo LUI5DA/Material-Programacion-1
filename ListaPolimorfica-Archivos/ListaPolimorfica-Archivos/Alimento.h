@@ -20,3 +20,5 @@ public:
     void write(ofstream& descriptor);
 };
 
+// Alimento::read(f) -> nos devuelve un alimento leido del archivo
+// cuando estamos saliendo del programa objeto->write(f) -> escribe el objeto en el archivo

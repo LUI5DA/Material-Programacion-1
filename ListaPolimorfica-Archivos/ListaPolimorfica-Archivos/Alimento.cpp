@@ -50,7 +50,7 @@ Alimento* Alimento::read(ifstream& f) {
 	fe = Fecha::read(f);
 
 
-	int i = stoi(id);
+	int i = stoi(id); // "27" stoi -> 27
 
 	stringstream pp(precio);
 	stringstream ii(IVA);
@@ -72,3 +72,6 @@ void Alimento::write(ofstream& f) {
 	f << id << '\t' << descripcion << '\t' << precio << '\t' << IVA << '\t' << marca << '\t' << porcGrasa << '\t';
 	expira->write(f);
 }
+
+// A
+// id descripcion precio IVA marca porcGrasa fechaDia fechaMes fechaAnio

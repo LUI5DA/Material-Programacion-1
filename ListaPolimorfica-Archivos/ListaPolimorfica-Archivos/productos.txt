@@ -1,2 +1,4 @@
 R
 15	pantalon	12	5	levis	0	35
+A
+1	Arroz	3	1	TioPelon	5	15	7	2026

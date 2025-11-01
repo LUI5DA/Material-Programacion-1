@@ -41,6 +41,24 @@ void Fecha::setAnio(int anio)
     this->anio = anio;
 }
 
+bool Fecha::isAfter(Fecha* f)
+{
+    if (anio > f->anio) {
+        return true;
+    }
+    if (anio == f->anio) {
+        if (mes > f->mes) {
+            return true;
+        }
+        if (mes == f->mes) {
+            if (dia > f->dia) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 string Fecha::toString() {
     stringstream s;
     s << dia << "/" << mes << "/" << anio << endl;

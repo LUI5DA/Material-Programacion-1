@@ -17,6 +17,7 @@ void Interfaz::mostrarMenu() {
     cout << "5. Mostrar productos" << endl;
     cout << "6. Mostrar compras" << endl;
     cout << "7. Guardar datos" << endl;
+    cout << "8. Mostrar productos vencidos" << endl;
     cout << "0. Salir" << endl;
     cout << "Seleccione una opcion: ";
 }
@@ -148,6 +149,14 @@ Compra* Interfaz::leerCompra(PequenioMundo* mundo) {
     ListaLineas* lista = new ListaLineas();
     lista->add(new LineaCompra(p, cantidad, descuento));
     return new Compra(idCompra, c, lista);
+}
+
+Fecha* Interfaz::leerFecha()
+{
+    int d, m, a;
+    cout << "Ingrese la fecha de hoy (d m a): ";
+    cin >> d >> m >> a;
+    return new Fecha(d, m, a);
 }
 
 void Interfaz::mostrarMensaje(const string& msg) {

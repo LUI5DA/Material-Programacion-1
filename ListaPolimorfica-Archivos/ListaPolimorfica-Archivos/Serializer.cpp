@@ -8,7 +8,8 @@
 void Serializer::saveData(ListaCliente* clientes, ListaProducto* productos, ListaCompras* compras)
 {
     // guardar los clientes
-    ofstream f("clientes.txt", ios::out);
+    ofstream f("clientes.txt", ios::out); // pasamos el nombre del archivo que queremos abrir
+	// si no existe lo crea
     clientes->write(f);
     f.close();
 

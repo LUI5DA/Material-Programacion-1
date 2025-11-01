@@ -1,5 +1,6 @@
 #pragma once
 #include "Producto.h"
+#include "Fecha.h"
 
 class NodoProducto {
 public:
@@ -22,6 +23,7 @@ public:
 	void remove(int id);
 
 	string toString();
+	string mostrarProductosVencidos(Fecha*);
 	void write(ofstream& f);
 };
 

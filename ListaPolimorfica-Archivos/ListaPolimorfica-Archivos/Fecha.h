@@ -25,6 +25,8 @@ public:
 	void setMes(int mes);
 	void setAnio(int anio);
 
+	bool isAfter(Fecha* f);
+
 	string toString();
 
 	// 2 metodos para trabajar con archivos

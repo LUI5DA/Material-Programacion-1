@@ -68,6 +68,7 @@ Compra* Compra::read(ifstream& descriptor, ListaCliente* clientes, ListaProducto
 	string id;
 	descriptor >> id;
 	descriptor >> idCliente;
+	// antes de leer las compras, hay que leer los clientes y productos para poder relacionarlos
 	Cliente* cliente = clientes->search(stoi(idCliente));
 	ListaLineas* listaLineas = new ListaLineas();
 

@@ -2,6 +2,7 @@
 #include<iostream>
 #include <sstream>
 #include<fstream>
+#include "Fecha.h"
 using namespace std;
 
 class Producto
@@ -32,6 +33,7 @@ public:
 	virtual double calcularPrecio();
 
 	virtual void write(ofstream&) = 0;
+	virtual bool estaVencido(Fecha*);
 
 };
 

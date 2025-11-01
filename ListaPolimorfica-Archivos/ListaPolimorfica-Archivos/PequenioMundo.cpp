@@ -19,9 +19,11 @@ void PequenioMundo::cargarDatos()
 	this->compras = Serializer::readCompras(clientes, productos);
 }
 
+// una clase de servicio es una para realizar una tarea especifica
+
 void PequenioMundo::guardarDatos()
 {
-	Serializer::saveData(clientes, productos, compras);
+	Serializer::saveData(clientes, productos, compras); // clase de servicio
 }
 
 void PequenioMundo::agregarCliente(Cliente* c)
@@ -63,4 +65,9 @@ string PequenioMundo::mostrarProductos()
 string PequenioMundo::mostrarCompras()
 {
     return compras->toString();
+}
+
+string PequenioMundo::mostrarProductosVencidos(Fecha* f)
+{
+	return productos->mostrarProductosVencidos(f);
 }

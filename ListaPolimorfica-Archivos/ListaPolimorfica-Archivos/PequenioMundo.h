@@ -3,7 +3,7 @@
 #include "ListaCliente.h"
 #include "ListaProducto.h"
 #include "Serializer.h"
-
+#include "Fecha.h"
 class PequenioMundo
 {
 private:
@@ -26,5 +26,6 @@ public:
 	string mostrarClientes();
 	string mostrarProductos();
 	string mostrarCompras();
+	string mostrarProductosVencidos(Fecha*);
 };
 

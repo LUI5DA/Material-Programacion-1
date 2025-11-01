@@ -67,6 +67,17 @@ string ListaProducto::toString() {
 
 }
 
+string ListaProducto::mostrarProductosVencidos(Fecha* f) {
+	NodoProducto* n = first;
+	stringstream s;
+	while (n) {
+		if (n->p->estaVencido(f)) {
+			s << n->p->toString() << endl;
+		}
+	}
+	return s.str();
+}
+
 NodoProducto::NodoProducto(Producto* pr, NodoProducto* sig)
 {
 	p = pr;

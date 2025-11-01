@@ -3,6 +3,7 @@
 #include "Cliente.h"
 #include "Producto.h"
 #include "Compra.h"
+#include "Fecha.h"
 #include "PequenioMundo.h" // para acceder a listas
 
 class Interfaz {
@@ -13,6 +14,7 @@ public:
     Cliente* leerCliente();
     Producto* leerProducto();
     Compra* leerCompra(PequenioMundo* mundo);
+    Fecha* leerFecha();
 
     void mostrarMensaje(const std::string& msg);
     void mostrarTexto(const std::string& texto);

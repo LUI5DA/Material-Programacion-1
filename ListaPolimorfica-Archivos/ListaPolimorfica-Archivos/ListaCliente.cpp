@@ -77,7 +77,8 @@ NodoCliente::NodoCliente(Cliente* pr, NodoCliente* sig)
 void ListaCliente::write(ofstream& f) {
 	NodoCliente* aux = first;
 	while (aux) {
-		aux->p->write(f);
+		aux->p->write(f); // en las listas polimorficas solo podemos llamar a los metodos que son comunes a todos los objetos
+		// es decir los que estan en la clase base
 		aux = aux->siguiente;
 	}
 }

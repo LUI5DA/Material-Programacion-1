@@ -1,5 +1,4 @@
 #include "Producto.h"
-#include "Fecha.h"
 
 Producto::Producto(int id, string descripcion, double precio , double IVA, string marca)
 {
@@ -69,4 +68,9 @@ string Producto::toString()
 double Producto::calcularPrecio()
 {
     return this->precio + this->IVA * this->precio;
+}
+
+bool Producto::estaVencido(Fecha* f)
+{
+    return false;
 }

@@ -29,3 +29,7 @@ string Perecedero::toString() {
 
 	return s.str();
 }
+
+bool Perecedero::estaVencido(Fecha* f) {
+	return f->isAfter(expira);
+}
